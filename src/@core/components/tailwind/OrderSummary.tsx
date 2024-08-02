@@ -3,35 +3,31 @@
 'use client'
 
 import React from 'react'
+import { BreakUpOption } from '../website/ProductList'
 
-interface OrderSummaryProps {
-  subtotal: number
-  shipping: number
-  tax: number
-  total: number
-}
+type OrderSummaryProps = { breakUps: BreakUpOption[] }
 
-const OrderSummary: React.FC<OrderSummaryProps> = ({ subtotal, shipping, tax, total }) => {
+const OrderSummary: React.FC<OrderSummaryProps> = ({ breakUps }) => {
+  console.log('breakUps', breakUps)
+  function isLastItem(index: number) {
+    return Boolean(breakUps && breakUps?.length - 1 === index)
+  }
   return (
     <div className='bg-white rounded-lg p-6 '>
       <h3 className='text-lg font-bold text-gray-900'>Order Summary</h3>
       <div className='mt-4 border-t border-gray-200 pt-4'>
-        <div className='flex justify-between text-sm text-gray-700'>
-          <span>Subtotal</span>
-          <span>${subtotal.toFixed(2)}</span>
-        </div>
-        <div className='flex justify-between text-sm text-gray-700 mt-2'>
-          <span>Shipping estimate</span>
-          <span>${shipping.toFixed(2)}</span>
-        </div>
-        <div className='flex justify-between text-sm text-gray-700 mt-2'>
-          <span>Tax estimate</span>
-          <span>${tax.toFixed(2)}</span>
-        </div>
-        <div className='flex justify-between text-sm font-semibold text-gray-900 mt-4 border-t border-gray-200 pt-4'>
-          <span>Order total</span>
-          <span>${total.toFixed(2)}</span>
-        </div>
+        {breakUps?.map(({ label, amount }, index) => (
+          <div
+            className={
+              isLastItem(index)
+                ? 'flex justify-between text-sm font-semibold text-gray-900 mt-4 border-t border-gray-200 pt-4'
+                : 'flex justify-between text-sm text-gray-700'
+            }
+          >
+            <span>{label}</span>
+            <span>${amount}</span>
+          </div>
+        ))}
       </div>
     </div>
   )

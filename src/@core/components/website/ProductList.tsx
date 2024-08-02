@@ -20,7 +20,28 @@ export type ProductType = {
   price: string
   color: string
   quantity: number
+  priceBreakUp: BreakUpOption[]
 }
+
+export type BreakUpOption = {
+  label: string
+  amount: string | number
+}
+
+const BreakUpList: BreakUpOption[] = [
+  {
+    label: 'Price',
+    amount: '5000'
+  },
+  {
+    label: 'GST(18%)',
+    amount: '78'
+  },
+  {
+    label: 'Total Pay',
+    amount: '5078'
+  }
+]
 
 // Define products data
 const products: ProductType[] = [
@@ -32,7 +53,8 @@ const products: ProductType[] = [
     imageAlt: "Front of men's Basic Tee in black.",
     price: '$35',
     color: 'Black',
-    quantity: 1
+    quantity: 1,
+    priceBreakUp: BreakUpList
   },
   {
     id: 2,
@@ -42,7 +64,8 @@ const products: ProductType[] = [
     imageAlt: "Front of men's Classic White Tee.",
     price: '$30',
     color: 'White',
-    quantity: 1
+    quantity: 1,
+    priceBreakUp: BreakUpList
   },
   {
     id: 3,
@@ -52,7 +75,8 @@ const products: ProductType[] = [
     imageAlt: "Front of men's Graphic Tee.",
     price: '$40',
     color: 'Gray',
-    quantity: 1
+    quantity: 1,
+    priceBreakUp: BreakUpList
   },
   {
     id: 4,
@@ -62,7 +86,8 @@ const products: ProductType[] = [
     imageAlt: "Front of men's Premium Hoodie.",
     price: '$60',
     color: 'Navy',
-    quantity: 1
+    quantity: 1,
+    priceBreakUp: BreakUpList
   }
   // Add more products as needed
 ]
@@ -118,7 +143,7 @@ export default function Example() {
   return (
     <div className='bg-white'>
       <div className='mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8'>
-        <h2 className='text-2xl font-bold tracking-tight text-gray-900'>Customers also purchased</h2>
+        <h2 className='text-2xl font-bold tracking-tight text-gray-900'>Products</h2>
 
         <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
           {products.map(product => (

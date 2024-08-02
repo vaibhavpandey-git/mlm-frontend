@@ -5,6 +5,7 @@ import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/re
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import OrderSummary from './OrderSummary'
 import { ProductType } from '../website/ProductList'
+import ButtonPro from '../custom/ButtonPro/ButtonPro'
 
 type CardModalProps = {
   isOpen: boolean
@@ -77,8 +78,7 @@ export default function Example({ isOpen, onClose, cartItems }: CardModalProps) 
                     </div>
                   </div>
                 </div>
-                <OrderSummary subtotal={0} shipping={0} tax={0} total={0} />
-
+                {cartItems && <OrderSummary breakUps={cartItems?.[0]?.priceBreakUp} />}
                 <div className='border-t border-gray-200 px-4 py-6 sm:px-6'>
                   <div className='mt-6'>
                     <a
@@ -87,6 +87,7 @@ export default function Example({ isOpen, onClose, cartItems }: CardModalProps) 
                     >
                       Checkout
                     </a>
+                    {/* <ButtonPro label={'Checkout'} /> */}
                   </div>
                 </div>
               </div>
