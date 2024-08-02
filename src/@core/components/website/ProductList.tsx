@@ -17,7 +17,8 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: 5000,
+    priceBreakDown: [{label: "Price" ,value: 4237.29},{label: "GST (18%)", value: "762.71"},{label: "Total Price",value: 5000}],
     color: 'Black'
   },
   {
@@ -26,7 +27,8 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
     imageAlt: "Front of men's Classic White Tee.",
-    price: '$30',
+    price: 5000,
+    priceBreakDown: [{label: "Price" ,value: 4237.29},{label: "GST (18%)", value: "762.71"},{label: "Total Price",value: 5000}],
     color: 'White'
   },
   {
@@ -35,7 +37,8 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
     imageAlt: "Front of men's Graphic Tee.",
-    price: '$40',
+    price: 5000,
+    priceBreakDown: [{label: "Price" ,value: 4237.29},{label: "GST (18%)", value: "762.71"},{label: "Total Price",value: 5000}],
     color: 'Gray'
   },
   {
@@ -44,7 +47,8 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg',
     imageAlt: "Front of men's Premium Hoodie.",
-    price: '$60',
+    price: 5000,
+    priceBreakDown: [{label: "Price" ,value: 4237.29},{label: "GST (18%)", value: "762.71"},{label: "Total Price",value: 5000}],
     color: 'Navy'
   }
   // Add more products as needed
