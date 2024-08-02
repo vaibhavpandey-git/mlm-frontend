@@ -63,7 +63,9 @@ export default function Example() {
     setAnchorEl(event.currentTarget)
     setCurrentProduct(product)
     handleAddToCart(product)
-    handleCartOpen()
+    if (action === 'buy') {
+      handleCartOpen()
+    }
   }
 
   const handleClose = () => {
@@ -108,13 +110,6 @@ export default function Example() {
             <ProductCard key={product.id} product={product} handleClick={handleClick} handleClose={handleClose} />
           ))}
         </div>
-
-        <Button
-          onClick={handleCartOpen}
-          className='mt-6 inline-flex justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-600'
-        >
-          View Cart
-        </Button>
 
         <CartModal isOpen={isCartOpen} onClose={handleCartClose} />
       </div>
