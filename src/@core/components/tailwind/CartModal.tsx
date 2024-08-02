@@ -14,7 +14,7 @@ type CardModalProps = {
 
 export default function Example({ isOpen, onClose, cartItems }: CardModalProps) {
   return (
-    <Dialog open={isOpen} onClose={onClose} className='relative z-10'>
+    <Dialog open={Boolean(isOpen && cartItems.length)} onClose={onClose} className='relative z-10'>
       <DialogBackdrop
         transition
         className='fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity duration-500 ease-in-out data-[closed]:opacity-0'
@@ -48,11 +48,11 @@ export default function Example({ isOpen, onClose, cartItems }: CardModalProps) 
                     <div className='flow-root'>
                       <ul role='list' className='-my-6 divide-y divide-gray-200'>
                         {cartItems.map(product => (
-                          <li key={product.id} className='flex py-6'>
+                          <li key={product?.id} className='flex py-6'>
                             <div className='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200'>
                               <img
-                                alt={product.imageAlt}
-                                src={product.imageSrc}
+                                alt={product?.imageAlt}
+                                src={product?.imageSrc}
                                 className='h-full w-full object-cover object-center'
                               />
                             </div>
@@ -61,14 +61,14 @@ export default function Example({ isOpen, onClose, cartItems }: CardModalProps) 
                               <div>
                                 <div className='flex justify-between text-base font-medium text-gray-900'>
                                   <h3>
-                                    <a href={product.href}>{product.name}</a>
+                                    <a href={product?.href}>{product?.name}</a>
                                   </h3>
-                                  <p className='ml-4'>{product.price}</p>
+                                  <p className='ml-4'>{product?.price}</p>
                                 </div>
-                                <p className='mt-1 text-sm text-gray-500'>{product.color}</p>
+                                <p className='mt-1 text-sm text-gray-500'>{product?.color}</p>
                               </div>
                               <div className='flex flex-1 items-end justify-between text-sm'>
-                                <p className='text-gray-500'>Qty {product.quantity}</p>
+                                <p className='text-gray-500'>Qty {product?.quantity}</p>
                               </div>
                             </div>
                           </li>
