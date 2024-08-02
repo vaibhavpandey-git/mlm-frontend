@@ -10,20 +10,11 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
-
-interface Product {
-  id: number
-  name: string
-  href: string
-  imageSrc: string
-  imageAlt: string
-  price: string
-  color: string
-}
+import { ProductType } from '@/@core/components/website/ProductList'
 
 interface ProductCardProps {
-  product: Product
-  handleClick: (event: MouseEvent<HTMLButtonElement>, product: Product, action: 'share' | 'buy') => void
+  product: ProductType
+  handleClick: (event: MouseEvent<HTMLButtonElement>, product: ProductType, action: 'share' | 'buy') => void
   handleClose: () => void
 }
 

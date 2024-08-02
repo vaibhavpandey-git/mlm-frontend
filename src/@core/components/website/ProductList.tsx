@@ -11,8 +11,19 @@ import ProductCard from '@/views/product/ProductCard'
 import { Button } from '@headlessui/react'
 import CartModal from '../tailwind/CartModal'
 
+export type ProductType = {
+  id: string | number
+  name: string
+  href: string
+  imageSrc: string
+  imageAlt: string
+  price: string
+  color: string
+  quantity: number
+}
+
 // Define products data
-const products = [
+const products: ProductType[] = [
   {
     id: 1,
     name: 'Basic Tee',
@@ -20,7 +31,8 @@ const products = [
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
     price: '$35',
-    color: 'Black'
+    color: 'Black',
+    quantity: 1
   },
   {
     id: 2,
@@ -29,7 +41,8 @@ const products = [
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
     imageAlt: "Front of men's Classic White Tee.",
     price: '$30',
-    color: 'White'
+    color: 'White',
+    quantity: 1
   },
   {
     id: 3,
@@ -38,7 +51,8 @@ const products = [
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
     imageAlt: "Front of men's Graphic Tee.",
     price: '$40',
-    color: 'Gray'
+    color: 'Gray',
+    quantity: 1
   },
   {
     id: 4,
@@ -47,7 +61,8 @@ const products = [
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg',
     imageAlt: "Front of men's Premium Hoodie.",
     price: '$60',
-    color: 'Navy'
+    color: 'Navy',
+    quantity: 1
   }
   // Add more products as needed
 ]
@@ -111,7 +126,7 @@ export default function Example() {
           ))}
         </div>
 
-        <CartModal isOpen={isCartOpen} onClose={handleCartClose} />
+        <CartModal isOpen={isCartOpen} onClose={handleCartClose} cartItems={[currentProduct]} />
       </div>
     </div>
   )
