@@ -8,6 +8,8 @@ import type { MouseEvent } from 'react'
 
 // MUI Imports
 import ProductCard from '@/views/product/ProductCard'
+import { Button } from '@headlessui/react'
+import CartModal from '../tailwind/CartModal'
 
 // Define products data
 const products = [
@@ -60,11 +62,39 @@ export default function Example() {
   const handleClick = (event: MouseEvent<HTMLButtonElement>, product: any) => {
     setAnchorEl(event.currentTarget)
     setCurrentProduct(product)
+    handleAddToCart(product)
   }
 
   const handleClose = () => {
     setAnchorEl(null)
     setCurrentProduct(null)
+  }
+
+  // States for managing the cart and modal
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const [cartItems, setCartItems] = useState<any[]>([])
+
+  const handleCartOpen = () => setIsCartOpen(true)
+  const handleCartClose = () => setIsCartOpen(false)
+
+  const handleAddToCart = (product: any) => {
+    setCartItems(prevItems => {
+      const itemIndex = prevItems.findIndex(item => item.id === product.id)
+      if (itemIndex > -1) {
+        const updatedItems = [...prevItems]
+        updatedItems[itemIndex].quantity += 1
+        return updatedItems
+      }
+      return [...prevItems, { ...product, quantity: 1 }]
+    })
+  }
+
+  const handleUpdateQuantity = (id: number, quantity: number) => {
+    setCartItems(prevItems => prevItems.map(item => (item.id === id ? { ...item, quantity } : item)))
+  }
+
+  const handleRemoveItem = (id: number) => {
+    setCartItems(prevItems => prevItems.filter(item => item.id !== id))
   }
 
   return (
@@ -84,6 +114,15 @@ export default function Example() {
             />
           ))}
         </div>
+
+        <Button
+          onClick={handleCartOpen}
+          className='mt-6 inline-flex justify-center rounded-md border border-transparent bg-blue-500 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-blue-600'
+        >
+          View Cart
+        </Button>
+
+        <CartModal isOpen={isCartOpen} onClose={handleCartClose} />
       </div>
     </div>
   )
