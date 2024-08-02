@@ -3,7 +3,7 @@
 'use client'
 
 // React Imports
-import { MouseEvent } from 'react'
+import { MouseEvent, useState } from 'react'
 
 // MUI Imports
 import Button from '@mui/material/Button'
@@ -23,13 +23,24 @@ interface Product {
 
 interface ProductCardProps {
   product: Product
-  anchorEl: HTMLElement | null
-  open: boolean
-  handleClick: (event: MouseEvent<HTMLButtonElement>, product: Product) => void
+  handleClick: (event: MouseEvent<HTMLButtonElement>, product: Product, action: 'share' | 'buy') => void
   handleClose: () => void
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, anchorEl, open, handleClick, handleClose }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, handleClick, handleClose }) => {
+  const [enableShare, setEnableShare] = useState(false)
+  const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
+
+  function onShare(type: any) {
+    setAnchorEl(null)
+    setEnableShare(false)
+  }
+
+  function handlerShareClick(event: MouseEvent<HTMLButtonElement>) {
+    setAnchorEl(event.currentTarget)
+    setEnableShare(true)
+  }
+
   return (
     <div key={product.id} className='group relative'>
       <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80'>
@@ -52,33 +63,33 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, anchorEl, open, hand
         <p className='text-sm font-medium text-gray-900'>{product.price}</p>
       </div>
       <div className='mt-4 flex justify-between items-center'>
-        <Button variant='contained' color='primary'>
+        <Button variant='contained' color='primary' onClick={event => handleClick(event, product, 'buy')}>
           Buy
         </Button>
         <IconButton
           id={`share-button-${product.id}`}
           aria-haspopup='true'
-          aria-expanded={open ? 'true' : 'false'}
-          onClick={event => handleClick(event, product)}
+          aria-expanded={enableShare ? 'true' : 'false'}
+          onClick={event => handlerShareClick(event)}
         >
           <i className='ri-share-line' />
         </IconButton>
         <Menu
           anchorEl={anchorEl}
-          open={Boolean(anchorEl && open)}
+          open={Boolean(anchorEl && enableShare)}
           MenuListProps={{ 'aria-labelledby': `share-button-${product.id}` }}
-          onClose={handleClose}
+          onClose={onShare}
         >
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={() => onShare(1)}>
             <i className='ri-facebook-fill text-xl' />
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={() => onShare(2)}>
             <i className='ri-twitter-fill text-xl' />
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={() => onShare(3)}>
             <i className='ri-linkedin-fill text-xl' />
           </MenuItem>
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={() => onShare(4)}>
             <i className='ri-google-fill text-xl' />
           </MenuItem>
         </Menu>

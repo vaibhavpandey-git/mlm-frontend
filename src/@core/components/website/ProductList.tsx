@@ -59,10 +59,11 @@ export default function Example() {
 
   const open = Boolean(anchorEl)
 
-  const handleClick = (event: MouseEvent<HTMLButtonElement>, product: any) => {
+  const handleClick = (event: MouseEvent<HTMLButtonElement>, product: any, action: 'share' | 'buy') => {
     setAnchorEl(event.currentTarget)
     setCurrentProduct(product)
     handleAddToCart(product)
+    handleCartOpen()
   }
 
   const handleClose = () => {
@@ -104,14 +105,7 @@ export default function Example() {
 
         <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
           {products.map(product => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              anchorEl={anchorEl}
-              open={Boolean(currentProduct === product && anchorEl)}
-              handleClick={handleClick}
-              handleClose={handleClose}
-            />
+            <ProductCard key={product.id} product={product} handleClick={handleClick} handleClose={handleClose} />
           ))}
         </div>
 
