@@ -81,11 +81,8 @@ export default function Example({ isOpen, onClose, cartItems }: CardModalProps) 
                 {cartItems && <OrderSummary breakUps={cartItems?.[0]?.priceBreakUp} />}
                 <div className='border-t border-gray-200 px-4 py-6 sm:px-6'>
                   <div className='mt-6'>
-                    <a
-                      href='#'
-                      className='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700'
-                    >
-                      Checkout
+                    <a className='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700'>
+                      Continue to Payment
                     </a>
                     {/* <ButtonPro label={'Checkout'} /> */}
                   </div>
