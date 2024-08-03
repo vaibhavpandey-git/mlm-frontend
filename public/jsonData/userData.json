@@ -26,66 +26,69 @@
     },
     "totalInvestment": 5000,
     "availableBalance": 2000,
-    "memberTree": {
-        "success": true,
-        "parent": {
-            "name": "Mai Parent"
-        },
-        "user": {
-            "name": "Mai Khud"
-        },
-        "children": [
-            {
-                "name": "1st Child",
-                "children": [
-                    {
-                        "name": "1st Child",
-                        "children": []
-                    },
-                    {
-                        "name": "2nd Child",
-                        "children": []
-                    },
-                    {
-                        "name": "3rd Child",
-                        "children": []
-                    }
-                ]
+    "memberTree": [
+        {
+            "success": true,
+            "isActive": false,
+            "parent": {
+                "name": "Mai Parent"
             },
-            {
-                "name": "1st Child",
-                "children": [
-                    {
-                        "name": "1st Child",
-                        "children": []
-                    },
-                    {
-                        "name": "2nd Child",
-                        "children": []
-                    },
-                    {
-                        "name": "3rd Child",
-                        "children": []
-                    }
-                ]
+            "user": {
+                "name": "Mai Khud"
             },
-            {
-                "name": "1st Child",
-                "children": [
-                    {
-                        "name": "1st Child",
-                        "children": []
-                    },
-                    {
-                        "name": "2nd Child",
-                        "children": []
-                    },
-                    {
-                        "name": "3rd Child",
-                        "children": []
-                    }
-                ]
-            }
-        ]
-    }
+            "children": [
+                {
+                    "name": "1st Child",
+                    "children": [
+                        {
+                            "name": "1st Child",
+                            "children": []
+                        },
+                        {
+                            "name": "2nd Child",
+                            "children": []
+                        },
+                        {
+                            "name": "3rd Child",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "1st Child",
+                    "children": [
+                        {
+                            "name": "1st Child",
+                            "children": []
+                        },
+                        {
+                            "name": "2nd Child",
+                            "children": []
+                        },
+                        {
+                            "name": "3rd Child",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "1st Child",
+                    "children": [
+                        {
+                            "name": "1st Child",
+                            "children": []
+                        },
+                        {
+                            "name": "2nd Child",
+                            "children": []
+                        },
+                        {
+                            "name": "3rd Child",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }
