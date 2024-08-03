@@ -28,7 +28,7 @@ export type BreakUpOption = {
   amount: string | number
 }
 
-const BreakUpList: BreakUpOption[] = [
+export const BreakUpList: BreakUpOption[] = [
   {
     label: 'Price',
     amount: '5000'
@@ -44,7 +44,7 @@ const BreakUpList: BreakUpOption[] = [
 ]
 
 // Define products data
-const products: ProductType[] = [
+export const products: ProductType[] = [
   {
     id: 1,
     name: 'Basic Tee',

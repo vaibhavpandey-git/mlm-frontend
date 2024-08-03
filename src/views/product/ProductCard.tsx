@@ -44,7 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, handleClick, handleC
       <div className='mt-4 flex justify-between'>
         <div>
           <h3 className='text-sm text-gray-700'>
-            <a href={product.href}>
+            <a>
               <span aria-hidden='true' className='absolute inset-0' />
               {product.name}
             </a>

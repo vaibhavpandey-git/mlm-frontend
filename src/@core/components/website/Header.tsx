@@ -3,9 +3,10 @@
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { useRouter } from 'next/navigation'
 
 const navigation = [
-  { name: 'Product', href: '#' },
+  { name: 'Product', href: '/product' },
   { name: 'Features', href: '#' },
   { name: 'Marketplace', href: '#' },
   { name: 'Company', href: '#' }
@@ -13,6 +14,11 @@ const navigation = [
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const router = useRouter()
+
+  function handleNavigation(url: string) {
+    router.push(url)
+  }
 
   return (
     <div className='bg-white'>
@@ -46,7 +52,10 @@ export default function Example() {
             ))}
           </div>
           <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-            <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
+            <a
+              onClick={() => handleNavigation('/login')}
+              className='text-sm font-semibold leading-6 text-gray-900 cursor-pointer'
+            >
               Log in <span aria-hidden='true'>&rarr;</span>
             </a>
           </div>
@@ -87,8 +96,8 @@ export default function Example() {
                 </div>
                 <div className='py-6'>
                   <a
-                    href='#'
-                    className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                    onClick={() => handleNavigation('/login')}
+                    className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 cursor-pointer'
                   >
                     Log in
                   </a>
