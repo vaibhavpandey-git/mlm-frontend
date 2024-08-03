@@ -1,0 +1,91 @@
+{
+    "success": true,
+    "personalDetails": {
+        "name": "Example Pandey",
+        "phone": "example@test.com",
+        "address": {
+            "addressLine1": "2/E, World Street, Bhatpar Rani, Deoria",
+            "zip": "234221",
+            "district": "Deoria",
+            "state": "Uttar Pradesh",
+            "country": "India"
+        }
+    },
+    "kycDetails": {
+        "aadharNumber": 124325763498,
+        "aadharImage": "01001011001100110011",
+        "panNumber": "FWFPP7837A",
+        "panImage": "010010010101101001010"
+    },
+    "bankDetails": {
+        "accountHolder": "Example Pandey",
+        "accountNumber": 12324354676,
+        "bankName": "State Bank of India",
+        "ifscCode": "SBIN0112056",
+        "upiId": "7564298043@paytm"
+    },
+    "totalInvestment": 5000,
+    "availableBalance": 2000,
+    "memberTree": {
+        "success": true,
+        "parent": {
+            "name": "Mai Parent"
+        },
+        "user": {
+            "name": "Mai Khud"
+        },
+        "children": [
+            {
+                "name": "1st Child",
+                "children": [
+                    {
+                        "name": "1st Child",
+                        "children": []
+                    },
+                    {
+                        "name": "2nd Child",
+                        "children": []
+                    },
+                    {
+                        "name": "3rd Child",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "1st Child",
+                "children": [
+                    {
+                        "name": "1st Child",
+                        "children": []
+                    },
+                    {
+                        "name": "2nd Child",
+                        "children": []
+                    },
+                    {
+                        "name": "3rd Child",
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "name": "1st Child",
+                "children": [
+                    {
+                        "name": "1st Child",
+                        "children": []
+                    },
+                    {
+                        "name": "2nd Child",
+                        "children": []
+                    },
+                    {
+                        "name": "3rd Child",
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    }
+}
