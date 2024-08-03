@@ -7,11 +7,7 @@ const Footer = () => {
     <footer className='bg-gray-900 text-white pt-12 pb-8 px-4'>
       <div className='mx-auto px-4 container overflow-hidden flex flex-col lg:flex-row justify-between'>
         <a href='/' className='block mr-4 w-1/3'>
-          <img
-            src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600'
-            className='w-10 ml-4 lg:ml-0'
-            alt='logo'
-          />
+          <img alt='' src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600' className='h-8 w-auto' />
         </a>
         <div className='w-2/3 block sm:flex text-sm mt-6 lg:mt-0'>
           <ul className='text-gray-700 list-none p-0 font-thin flex flex-col text-left w-full'>
