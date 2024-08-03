@@ -10,6 +10,7 @@ import ScanToPay from './ScanToPay'
 import { useState } from 'react'
 import MultiStepPanel, { steps } from '@/@core/components/tailwind/MultiStepPanel'
 import CustomButton from '@/@core/components/custom/CustomButton/ButtonTailwind'
+import ImageUpload from '@/@core/components/tailwind/ImageUpload'
 const Items = [
   {
     id: 1,
@@ -81,7 +82,7 @@ export default function Checkout() {
       
       className="w-full flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer"
     >
-      Upload Payment Confirmation Screenshot
+      Upload Payment Receipt
     </button>
     </div>
         </Grid>
@@ -89,7 +90,9 @@ export default function Checkout() {
         
       )
       case 2 :
-        return <>Upload Proof</>
+        return <div>
+        <ImageUpload />
+      </div>
 
         default :
         return <></>

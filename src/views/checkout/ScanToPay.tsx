@@ -2,8 +2,8 @@
 
 const ScanToPay = () => {
   return (
-    <div className='flex flex-col items-center justify-center  bg-slate-50 p-5'>
-      <div className='bg-white shadow-sm rounded-lg max-w-md w-full'>
+    <div className='flex flex-col items-center justify-center  p-5'>
+      <div className='bg-white rounded-lg max-w-md w-full'>
         <div className='flex flex-col items-center'>
           <img 
             src='https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600' 
