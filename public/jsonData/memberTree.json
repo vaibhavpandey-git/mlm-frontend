@@ -10,25 +10,52 @@
         {
             "name": "1st Child",
             "children": [
-                "1st Child",
-                "2nd Child",
-                "3rd Child"
+                {
+                    "name": "1st Child",
+                    "children": []
+                },
+                {
+                    "name": "2nd Child",
+                    "children": []
+                },
+                {
+                    "name": "3rd Child",
+                    "children": []
+                }
             ]
         },
         {
-            "name": "2nd Child",
+            "name": "1st Child",
             "children": [
-                "1st Child",
-                "2nd Child",
-                "3rd Child"
+                {
+                    "name": "1st Child",
+                    "children": []
+                },
+                {
+                    "name": "2nd Child",
+                    "children": []
+                },
+                {
+                    "name": "3rd Child",
+                    "children": []
+                }
             ]
         },
         {
-            "name": "3rd Child",
+            "name": "1st Child",
             "children": [
-                "1st Child",
-                "2nd Child",
-                "3rd Child"
+                {
+                    "name": "1st Child",
+                    "children": []
+                },
+                {
+                    "name": "2nd Child",
+                    "children": []
+                },
+                {
+                    "name": "3rd Child",
+                    "children": []
+                }
             ]
         }
     ]
