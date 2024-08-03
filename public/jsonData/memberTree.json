@@ -1,0 +1,35 @@
+{
+    "success": true,
+    "parent": {
+        "name": "Mai Parent"
+    },
+    "user": {
+        "name": "Mai Khud"
+    },
+    "children": [
+        {
+            "name": "1st Child",
+            "children": [
+                "1st Child",
+                "2nd Child",
+                "3rd Child"
+            ]
+        },
+        {
+            "name": "2nd Child",
+            "children": [
+                "1st Child",
+                "2nd Child",
+                "3rd Child"
+            ]
+        },
+        {
+            "name": "3rd Child",
+            "children": [
+                "1st Child",
+                "2nd Child",
+                "3rd Child"
+            ]
+        }
+    ]
+}
