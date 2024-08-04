@@ -30,7 +30,7 @@ export default function Checkout() {
   const [currentStep, setCurrentStep] = useState<number>(0);
 
 
-  function formSubmitHandler(data: any){
+  function formSubmitHandler(data: any) {
     nextStep()
   }
 
@@ -40,87 +40,77 @@ export default function Checkout() {
     }
   };
 
-  function stepChangeHandler(step : { id :number , step :string }){
+  function stepChangeHandler(step: { id: number, step: string }) {
     setCurrentStep(step.id)
   }
 
-  function onPaymentDone(){
+  function onPaymentDone() {
 
     nextStep()
   }
-  function PanelContent(){
+  function PanelContent() {
     const step = currentStep
 
-    switch(step){
+    switch (step) {
       case 0:
         return (
-          <Grid container spacing={5}>
-            <Grid item lg={6}>
-              <div className='bg-white sm:rounded-lg p-6'>
-
-                 <CartItems cartItems={Items}/>
-                 {Items && <OrderSummary breakUps={Items?.[0]?.priceBreakUp} />}
-                 </div>
-              </Grid>
-              <Grid item lg={6}>
-               <CheckoutForm onSubmit={formSubmitHandler} />
-                     
-              </Grid>
-             
+          <Grid container justifyContent={'center'}>
+            <Grid item lg={8}>
+              <CheckoutForm onSubmit={formSubmitHandler} />
             </Grid>
+          </Grid>
         )
 
-        case 1: 
+      case 1:
         return (
-        <Grid container justifyContent={'center'}>
-          <Grid item lg={12}>
-          <ScanToPay />
-          </Grid>
-          <Grid item lg={6}>
-          <div className="mt-6">
-    <button onClick={()=>onPaymentDone()}
-      
-      className="w-full flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer"
-    >
-      Upload Payment Receipt
-    </button>
-    </div>
-        </Grid>
-        </Grid>
-        
-      )
-      case 2 :
-        return <div>
-        <ImageUpload />
-      </div>
+          <Grid container justifyContent={'center'}>
 
-        default :
+            <Grid item lg={8}>
+
+              <ScanToPay />
+            </Grid>
+            <Grid item lg={6}>
+              <div className="mt-6">
+                <button onClick={() => onPaymentDone()}
+
+                  className="w-full flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer"
+                >
+                  Upload Payment Receipt
+                </button>
+              </div>
+            </Grid>
+          </Grid>
+
+        )
+      case 2:
+        return <div>
+          <ImageUpload />
+        </div>
+
+      default:
         return <></>
     }
   }
 
   return (
     <>
-      <div className='min-h-screen bg-gray-100 pt-40 pb-40'>
-        <div className='max-w-7xl mx-auto sm:px-6 lg:px-8'>
-          <div className='bg-white sm:rounded-lg p-6 pt-1'>
-          <div className='bg-white py-4 border-b'>
-          <div className='max-w-7xl mx-auto  flex justify-between items-center'>
-            <button
-              onClick={() => router.back()}
-              className='bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded'
-            >
-              Go Back
-            </button>
-            <h2 className='text-xl font-semibold text-gray-900'>Checkout</h2>
-          </div>
-        </div>
-                 <MultiStepPanel currentStep={currentStep} onChangeStep={stepChangeHandler}>
-                 <PanelContent/>
-            
-                  </MultiStepPanel>
-          </div>
-        </div>
+      <div className='pt-20 pb-40'>
+        <Grid container justifyContent={'space-between'}>
+          <Grid item lg={8} className='border rounded-sm p-5 bg-white'>
+            <MultiStepPanel currentStep={currentStep} onChangeStep={stepChangeHandler}>
+            </MultiStepPanel>
+            <PanelContent />
+          </Grid>
+          <Grid item lg={3}>
+            <div className='bg-white sm:rounded-lg shadow'>
+              <div className='px-6 pt-1'>
+                <CartItems cartItems={Items} />
+              </div>
+
+              {Items && <OrderSummary breakUps={Items?.[0]?.priceBreakUp} />}
+            </div>
+          </Grid>
+        </Grid>
       </div>
     </>
   )

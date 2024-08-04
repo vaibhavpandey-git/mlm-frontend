@@ -7,13 +7,11 @@ export const steps = [
 ];
 
 type MultiStepPanelProps = {
-  children : ReactNode;
   currentStep : number;
   onChangeStep : any
 }
-const MultiStepPanel: React.FC<MultiStepPanelProps> = ({children , currentStep , onChangeStep}) => {
+const MultiStepPanel: React.FC<MultiStepPanelProps> = ({ currentStep , onChangeStep}) => {
 
-  
   return (
     <div className="container mx-auto p-4">
       <ol className="flex items-center w-full p-3 space-x-2 text-sm font-medium text-center text-gray-500 border border-gray-200 rounded-lg  sm:text-base sm:p-4 sm:space-x-4 rtl:space-x-reverse">
@@ -33,12 +31,6 @@ const MultiStepPanel: React.FC<MultiStepPanelProps> = ({children , currentStep ,
           </li>
         ))}
       </ol>
-      <div className="mt-8">
-        {
-          children
-        }
-      </div>
-      
     </div>
   );
 };

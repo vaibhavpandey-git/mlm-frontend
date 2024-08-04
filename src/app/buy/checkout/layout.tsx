@@ -7,6 +7,7 @@ import BlankLayout from '@layouts/BlankLayout'
 import Header from '@/@core/components/website/Header'
 import Footer from '@/@core/components/website/Footer'
 import WebsiteWrapper from '@/@core/components/tailwind/WebsiteWrapper'
+import CheckoutHeader from '@/views/checkout/CheckoutHeader'
 
 const Layout = ({ children }: ChildrenType) => {
   // Vars
@@ -14,9 +15,9 @@ const Layout = ({ children }: ChildrenType) => {
 
   return (
     <Providers direction={direction}>
-      <Header />
+      <CheckoutHeader/>
       <BlankLayout>
-      <WebsiteWrapper texture={true}>
+      <WebsiteWrapper texture={false}>
         {children}
       </WebsiteWrapper>
         </BlankLayout>

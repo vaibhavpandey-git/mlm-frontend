@@ -25,14 +25,15 @@ const ImageUpload: React.FC = () => {
   };
 
   return (
-    <div className="p-4 flex flex-wrap justify-center items-center w-full h-full z-[1000] before:fixed before:inset-0 before:w-full before:h-full ">
+
+    <div className="flex flex-wrap justify-center items-center w-full h-full">
       <div className="w-full max-w-lg bg-white  rounded-lg p-6 relative">
         <div className="flex items-center pb-3 border-b border-gray-200">
           <div className="flex-1">
             <h3 className="text-gray-800 text-xl font-bold">Upload Receipt</h3>
             <p className="text-gray-600 text-xs mt-1">Upload screenshot or Receipt of payment</p>
           </div>
-         
+
         </div>
 
         <div className="rounded-lg border-2 border-gray-200 border-dashed mt-6">
@@ -115,7 +116,7 @@ const ImageUpload: React.FC = () => {
           </div>
         )}
 
-       
+
       </div>
     </div>
   );

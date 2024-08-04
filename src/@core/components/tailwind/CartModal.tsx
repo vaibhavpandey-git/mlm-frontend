@@ -19,7 +19,7 @@ export default function Example({ isOpen, onClose, cartItems }: CardModalProps) 
   const router = useRouter()
   
   function handleContinue(){
-    router.push('/checkout')
+    router.push('/buy/checkout')
   }
   return (
     <Dialog open={Boolean(isOpen && cartItems.length)} onClose={onClose} className='relative z-10'>
