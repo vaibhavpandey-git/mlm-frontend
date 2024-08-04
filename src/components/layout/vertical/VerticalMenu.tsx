@@ -66,11 +66,11 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
           icon={<i className='ri-home-smile-line' />}
           suffix={<Chip label='5' size='small' color='error' />}
         >
-          <MenuItem href='/'>Analytics</MenuItem>
+          <MenuItem href='/admin'>Analytics</MenuItem>
         </SubMenu>
 
         <MenuSection label='Apps & Pages'>
-          <MenuItem href='/account-settings' icon={<i className='ri-user-settings-line' />}>
+          <MenuItem href='/admin/account-settings' icon={<i className='ri-user-settings-line' />}>
             Account Settings
           </MenuItem>
           <SubMenu label='Auth Pages' icon={<i className='ri-shield-keyhole-line' />}>
@@ -92,7 +92,7 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
               Under Maintenance
             </MenuItem>
           </SubMenu>
-          <MenuItem href='/card-basic' icon={<i className='ri-bar-chart-box-line' />}>
+          <MenuItem href='/admin/card-basic' icon={<i className='ri-bar-chart-box-line' />}>
             Cards
           </MenuItem>
         </MenuSection>
