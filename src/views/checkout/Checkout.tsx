@@ -92,24 +92,22 @@ export default function Checkout() {
   }
 
   return (
-    <>
-      <div className='pt-20 pb-40'>
-        <Grid container justifyContent={'space-between'} gap={5}>
-          <Grid item lg={8} order={{ xs: 2, sm: 2, lg: 1, md: 1 }} className='border rounded-sm p-5 bg-white'>
-            <MultiStepPanel currentStep={currentStep} onChangeStep={stepChangeHandler}>
-            </MultiStepPanel>
-            <PanelContent />
-          </Grid>
-          <Grid item lg={3} sm={12} xs={12} order={{ xs: 1, sm: 1, lg: 2, md: 2 }}>
-            <div className='bg-white sm:rounded-lg shadow'>
-              <div className='px-6 pt-1'>
-                <CartItems cartItems={Items} />
-              </div>
-              {Items && <OrderSummary breakUps={Items?.[0]?.priceBreakUp} />}
-            </div>
-          </Grid>
+    <div className='pt-20 pb-40'>
+      <Grid container justifyContent={'space-between'} gap={5}>
+        <Grid item lg={8} order={{ xs: 2, sm: 2, lg: 1, md: 1 }} className='border rounded-sm p-5 bg-white'>
+          <MultiStepPanel currentStep={currentStep} onChangeStep={stepChangeHandler}>
+          </MultiStepPanel>
+          <PanelContent />
         </Grid>
-      </div>
-    </>
+        <Grid item lg={3} sm={12} xs={12} order={{ xs: 1, sm: 1, lg: 2, md: 2 }}>
+          <div className='bg-white sm:rounded-lg shadow'>
+            <div className='px-6 pt-1'>
+              <CartItems cartItems={Items} />
+            </div>
+            {Items && <OrderSummary breakUps={Items?.[0]?.priceBreakUp} />}
+          </div>
+        </Grid>
+      </Grid>
+    </div>
   )
 }

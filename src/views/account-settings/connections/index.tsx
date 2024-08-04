@@ -12,6 +12,8 @@ import Switch from '@mui/material/Switch'
 // Component Imports
 import CustomIconButton from '@core/components/mui/IconButton'
 
+import TreeComponent from '@/components/tree/TreeComponent'
+
 type ConnectedAccountsType = {
   title: string
   logo: string
@@ -93,60 +95,11 @@ const socialAccountsArr: SocialAccountsType[] = [
   }
 ]
 
+
 const Connections = () => {
   return (
-    <Card>
-      <Grid container>
-        <Grid item xs={12} md={6}>
-          <CardHeader
-            title='Connected Accounts'
-            subheader='Display content from your connected accounts on your site'
-          />
-          <CardContent className='flex flex-col gap-4'>
-            {connectedAccountsArr.map((item, index) => (
-              <div key={index} className='flex items-center justify-between gap-4'>
-                <div className='flex flex-grow items-center gap-4'>
-                  <img height={32} width={32} src={item.logo} alt={item.title} />
-                  <div className='flex-grow'>
-                    <Typography className='font-medium' color='text.primary'>
-                      {item.title}
-                    </Typography>
-                    <Typography variant='body2'>{item.subtitle}</Typography>
-                  </div>
-                </div>
-                <Switch defaultChecked={item.checked} />
-              </div>
-            ))}
-          </CardContent>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <CardHeader title='Social Accounts' subheader='Display content from social accounts on your site' />
-          <CardContent className='flex flex-col gap-4'>
-            {socialAccountsArr.map((item, index) => (
-              <div key={index} className='flex items-center justify-between gap-4'>
-                <div className='flex flex-grow items-center gap-4'>
-                  <img height={32} width={32} src={item.logo} alt={item.title} />
-                  <div className='flex-grow'>
-                    <Typography className='font-medium' color='text.primary'>
-                      {item.title}
-                    </Typography>
-                    {item.isConnected ? (
-                      <Typography color='primary' component={Link} href={item.href || '/'} target='_blank'>
-                        {item.username}
-                      </Typography>
-                    ) : (
-                      <Typography variant='body2'>Not Connected</Typography>
-                    )}
-                  </div>
-                </div>
-                <CustomIconButton variant='outlined' color={item.isConnected ? 'error' : 'secondary'}>
-                  <i className={item.isConnected ? 'ri-delete-bin-7-line' : 'ri-links-line'} />
-                </CustomIconButton>
-              </div>
-            ))}
-          </CardContent>
-        </Grid>
-      </Grid>
+    <Card className='min-h-[500px]'>
+      <TreeComponent />
     </Card>
   )
 }
