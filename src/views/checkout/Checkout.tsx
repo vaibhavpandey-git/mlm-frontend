@@ -72,7 +72,6 @@ export default function Checkout() {
             <Grid item lg={6}>
               <div className="mt-6">
                 <button onClick={() => onPaymentDone()}
-
                   className="w-full flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 cursor-pointer"
                 >
                   Upload Payment Receipt
@@ -95,18 +94,17 @@ export default function Checkout() {
   return (
     <>
       <div className='pt-20 pb-40'>
-        <Grid container justifyContent={'space-between'}>
-          <Grid item lg={8} className='border rounded-sm p-5 bg-white'>
+        <Grid container justifyContent={'space-between'} gap={5}>
+          <Grid item lg={8} order={{ xs: 2, sm: 2, lg: 1, md: 1 }} className='border rounded-sm p-5 bg-white'>
             <MultiStepPanel currentStep={currentStep} onChangeStep={stepChangeHandler}>
             </MultiStepPanel>
             <PanelContent />
           </Grid>
-          <Grid item lg={3}>
+          <Grid item lg={3} sm={12} xs={12} order={{ xs: 1, sm: 1, lg: 2, md: 2 }}>
             <div className='bg-white sm:rounded-lg shadow'>
               <div className='px-6 pt-1'>
                 <CartItems cartItems={Items} />
               </div>
-
               {Items && <OrderSummary breakUps={Items?.[0]?.priceBreakUp} />}
             </div>
           </Grid>

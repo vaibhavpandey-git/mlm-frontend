@@ -30,21 +30,25 @@ export default function CheckoutHeader() {
               />
             </a>
           </div>
-         
+
           <div className='lg:flex lg:gap-x-12'>
-            {navigation.map(item => (
+            {/* {navigation.map(item => (
               <a key={item.name} href={item.href} className='text-sm font-semibold leading-6 text-gray-900'>
                 {item.name}
               </a>
-            ))}
+            ))} */}
+            <h3 className='text font-semibold text-gray-900'>
+              Checkout
+            </h3>
+
           </div>
           <div className='lg:flex lg:flex-1 lg:justify-end'>
-            <a
+            {/* <a
               onClick={() => handleNavigation('/login')}
               className='text-sm font-semibold leading-6 text-gray-900 cursor-pointer'
             >
               Log in <span aria-hidden='true'>&rarr;</span>
-            </a>
+            </a> */}
           </div>
         </nav>
       </header>
