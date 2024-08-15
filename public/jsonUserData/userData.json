@@ -1,94 +1,154 @@
 {
-    "success": true,
-    "personalDetails": {
-        "name": "Example Pandey",
-        "phone": "example@test.com",
-        "address": {
-            "addressLine1": "2/E, World Street, Bhatpar Rani, Deoria",
-            "zip": "234221",
-            "district": "Deoria",
-            "state": "Uttar Pradesh",
-            "country": "India"
-        }
-    },
-    "kycDetails": {
-        "aadharNumber": 124325763498,
-        "aadharImage": "01001011001100110011",
-        "panNumber": "FWFPP7837A",
-        "panImage": "010010010101101001010"
-    },
-    "bankDetails": {
-        "accountHolder": "Example Pandey",
-        "accountNumber": 12324354676,
-        "bankName": "State Bank of India",
-        "ifscCode": "SBIN0112056",
-        "upiId": "7564298043@paytm"
-    },
-    "totalInvestment": 5000,
-    "availableBalance": 2000,
-    "memberTree": [
+    "users": [
         {
-            "success": true,
-            "isActive": false,
-            "parent": {
-                "name": "Mai Parent"
+            "phone": 1234567890,
+            "personalDetails": {
+                "name": "John Doe",
+                "email": "johndoe@example.com",
+                "dateOfBirth": "1990-01-01T00:00:00.000Z",
+                "gender": "Male",
+                "address": {
+                    "firstLine": "123 Main St",
+                    "city": "New York",
+                    "pinCode": 10001,
+                    "country": "USA",
+                    "state": "NY"
+                }
             },
-            "user": {
-                "name": "Mai Khud"
+            "bankDetails": {
+                "bankName": "State Bank of India",
+                "accountNumber": 9876543255,
+                "accountHolder": "Vaibhav Pandey",
+                "bankIFSC": "SBIN00045",
+                "UPI": "7827295033@paytm"
             },
-            "children": [
+            "kycDetails": {
+                "aadharNumber": 123456789012,
+                "panNumber": 9876543210,
+                "aadharProof": "aadhar-proof-url",
+                "panProof": "pan-proof-url",
+                "status": "approved"
+            },
+            "tempParent": "parent-id-1",
+            "products": [
                 {
-                    "name": "1st Child",
-                    "children": [
+                    "parentId": "parent-id-1",
+                    "orderId": "order-id-1",
+                    "productId": "product-id-1",
+                    "isActive": true,
+                    "referrals": [
                         {
-                            "name": "1st Child",
-                            "children": []
-                        },
-                        {
-                            "name": "2nd Child",
-                            "children": []
-                        },
-                        {
-                            "name": "3rd Child",
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "name": "1st Child",
-                    "children": [
-                        {
-                            "name": "1st Child",
-                            "children": []
-                        },
-                        {
-                            "name": "2nd Child",
-                            "children": []
-                        },
-                        {
-                            "name": "3rd Child",
-                            "children": []
-                        }
-                    ]
-                },
-                {
-                    "name": "1st Child",
-                    "children": [
-                        {
-                            "name": "1st Child",
-                            "children": []
-                        },
-                        {
-                            "name": "2nd Child",
-                            "children": []
-                        },
-                        {
-                            "name": "3rd Child",
-                            "children": []
+                            "userId": "referral-user-id-1",
+                            "orderId": "referral-order-id-1"
                         }
                     ]
                 }
-            ]
+            ],
+            "canBuy": true,
+            "refCode": "ABC123",
+            "canRefer": false,
+            "investment": 1000,
+            "balance": 500
+        },
+        {
+            "phone": 9876543210,
+            "personalDetails": {
+                "name": "Jane Smith",
+                "email": "janesmith@example.com",
+                "dateOfBirth": "1985-05-15T00:00:00.000Z",
+                "gender": "Female",
+                "address": {
+                    "firstLine": "456 Market St",
+                    "city": "Los Angeles",
+                    "pinCode": 90001,
+                    "country": "USA",
+                    "state": "CA"
+                }
+            },
+            "bankDetails": {
+                "bankName": "State Bank of India",
+                "accountNumber": 9876543255,
+                "accountHolder": "Vaibhav Pandey",
+                "bankIFSC": "SBIN00045",
+                "UPI": "7827295033@paytm"
+            },
+            "kycDetails": {
+                "aadharNumber": 234567890123,
+                "panNumber": 8765432109,
+                "aadharProof": "aadhar-proof-url-2",
+                "panProof": "pan-proof-url-2",
+                "status": "approval pending"
+            },
+            "tempParent": "parent-id-2",
+            "products": [
+                {
+                    "parentId": "parent-id-2",
+                    "orderId": "order-id-2",
+                    "productId": "product-id-2",
+                    "isActive": false,
+                    "referrals": [
+                        {
+                            "userId": "referral-user-id-2",
+                            "orderId": "referral-order-id-2"
+                        }
+                    ]
+                }
+            ],
+            "canBuy": true,
+            "refCode": "DEF456",
+            "canRefer": true,
+            "investment": 2000,
+            "balance": 1500
+        },
+        {
+            "phone": 5555555555,
+            "personalDetails": {
+                "name": "Alice Johnson",
+                "email": "alicejohnson@example.com",
+                "dateOfBirth": "1992-07-22T00:00:00.000Z",
+                "gender": "Female",
+                "address": {
+                    "firstLine": "789 Broadway",
+                    "city": "San Francisco",
+                    "pinCode": 94103,
+                    "country": "USA",
+                    "state": "CA"
+                }
+            },
+            "bankDetails": {
+                "bankName": "State Bank of India",
+                "accountNumber": 9876543255,
+                "accountHolder": "Vaibhav Pandey",
+                "bankIFSC": "SBIN00045",
+                "UPI": "7827295033@paytm"
+            },
+            "kycDetails": {
+                "aadharNumber": 345678901234,
+                "panNumber": 7654321098,
+                "aadharProof": "aadhar-proof-url-3",
+                "panProof": "pan-proof-url-3",
+                "status": "rejected"
+            },
+            "tempParent": "parent-id-3",
+            "products": [
+                {
+                    "parentId": "parent-id-3",
+                    "orderId": "order-id-3",
+                    "productId": "product-id-3",
+                    "isActive": true,
+                    "referrals": [
+                        {
+                            "userId": "referral-user-id-3",
+                            "orderId": "referral-order-id-3"
+                        }
+                    ]
+                }
+            ],
+            "canBuy": false,
+            "refCode": "GHI789",
+            "canRefer": true,
+            "investment": 3000,
+            "balance": 2500
         }
     ]
 }

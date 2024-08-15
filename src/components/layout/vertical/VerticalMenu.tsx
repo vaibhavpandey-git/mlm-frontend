@@ -20,6 +20,7 @@ import StyledVerticalNavExpandIcon from '@menu/styles/vertical/StyledVerticalNav
 // Style Imports
 import menuItemStyles from '@core/styles/vertical/menuItemStyles'
 import menuSectionStyles from '@core/styles/vertical/menuSectionStyles'
+import { ReactElement } from 'react'
 
 type RenderExpandIconProps = {
   open?: boolean
@@ -32,6 +33,110 @@ const RenderExpandIcon = ({ open, transitionDuration }: RenderExpandIconProps) =
   </StyledVerticalNavExpandIcon>
 )
 
+const navigationList = {
+  "menus": [
+    {
+      "type": "subMenu",
+      "label": "Dashboards",
+      "icon": "ri-home-smile-line",
+      "suffix": {
+        "label": "5",
+        "size": "small",
+        "color": "error"
+      },
+      "items": [
+        {
+          "type": "menuItem",
+          "label": "Analytics",
+          "href": "/admin"
+        }
+      ]
+    },
+    {
+      "type": "menuSection",
+      "label": "Manage",
+      "items": [
+        {
+          "type": "menuItem",
+          "label": "Approvals",
+          "href": "/admin/manage-approvals",
+          "icon": "ri-pass-valid-line"
+        },
+        {
+          "type": "menuItem",
+          "label": "My Store",
+          "href": "/admin/my-store",
+          "icon": "ri-store-3-line"
+        },
+        {
+          "type": "menuItem",
+          "label": "Customer Service Line",
+          "href": "/admin/user-queries",
+          "icon": "ri-customer-service-line"
+        },
+        {
+          "type": "subMenu",
+          "label": "Auth Pages",
+          "icon": "ri-shield-keyhole-line",
+          "items": [
+            {
+              "type": "menuItem",
+              "label": "Login",
+              "href": "/login",
+              "target": "_blank"
+            },
+            {
+              "type": "menuItem",
+              "label": "Register",
+              "href": "/register",
+              "target": "_blank"
+            },
+            {
+              "type": "menuItem",
+              "label": "Forgot Password",
+              "href": "/forgot-password",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "type": "subMenu",
+          "label": "Miscellaneous",
+          "icon": "ri-question-line",
+          "items": [
+            {
+              "type": "menuItem",
+              "label": "Error",
+              "href": "/error",
+              "target": "_blank"
+            },
+            {
+              "type": "menuItem",
+              "label": "Under Maintenance",
+              "href": "/under-maintenance",
+              "target": "_blank"
+            }
+          ]
+        },
+        {
+          "type": "menuItem",
+          "label": "Cards",
+          "href": "/admin/card-basic",
+          "icon": "ri-bar-chart-box-line"
+        },
+        {
+          "type": "menuItem",
+          "label": "Account Settings",
+          "href": "/admin/account-settings",
+          "icon": "ri-user-settings-line"
+        },
+      ]
+    }
+  ]
+}
+
+
+
 const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectScrollbar: boolean) => void }) => {
   // Hooks
   const theme = useTheme()
@@ -39,19 +144,48 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
 
   const ScrollWrapper = isBreakpointReached ? 'div' : PerfectScrollbar
 
+  const renderMenuItems = (items: any[]) =>
+    items.map((item, index) => {
+      if (item.type === 'subMenu') {
+        return (
+          <SubMenu
+            key={index}
+            label={item.label}
+            icon={<i className={item.icon} />}
+            suffix={item.suffix ? <Chip {...item.suffix} /> : null}
+          >
+            {renderMenuItems(item.items)}
+          </SubMenu>
+        )
+      } else if (item.type === 'menuItem') {
+        return (
+          <MenuItem key={index} href={item.href} icon={item.icon ? <i className={item.icon} /> : undefined} target={item.target}>
+            {item.label}
+          </MenuItem>
+        )
+      } else if (item.type === 'menuSection') {
+        return (
+          <MenuSection key={index} label={item.label}>
+            {renderMenuItems(item.items)}
+          </MenuSection>
+        )
+      }
+      return null
+    })
+
   return (
     // eslint-disable-next-line lines-around-comment
     /* Custom scrollbar instead of browser scroll, remove if you want browser scroll only */
     <ScrollWrapper
       {...(isBreakpointReached
         ? {
-            className: 'bs-full overflow-y-auto overflow-x-hidden',
-            onScroll: container => scrollMenu(container, false)
-          }
+          className: 'bs-full overflow-y-auto overflow-x-hidden',
+          onScroll: container => scrollMenu(container, false)
+        }
         : {
-            options: { wheelPropagation: false, suppressScrollX: true },
-            onScrollY: container => scrollMenu(container, true)
-          })}
+          options: { wheelPropagation: false, suppressScrollX: true },
+          onScrollY: container => scrollMenu(container, true)
+        })}
     >
       {/* Incase you also want to scroll NavHeader to scroll with Vertical Menu, remove NavHeader from above and paste it below this comment */}
       {/* Vertical Menu */}
@@ -61,41 +195,9 @@ const VerticalMenu = ({ scrollMenu }: { scrollMenu: (container: any, isPerfectSc
         renderExpandedMenuItemIcon={{ icon: <i className='ri-circle-line' /> }}
         menuSectionStyles={menuSectionStyles(theme)}
       >
-        <SubMenu
-          label='Dashboards'
-          icon={<i className='ri-home-smile-line' />}
-          suffix={<Chip label='5' size='small' color='error' />}
-        >
-          <MenuItem href='/admin'>Analytics</MenuItem>
-        </SubMenu>
 
-        <MenuSection label='Apps & Pages'>
-          <MenuItem href='/admin/account-settings' icon={<i className='ri-user-settings-line' />}>
-            Account Settings
-          </MenuItem>
-          <SubMenu label='Auth Pages' icon={<i className='ri-shield-keyhole-line' />}>
-            <MenuItem href='/login' target='_blank'>
-              Login
-            </MenuItem>
-            <MenuItem href='/register' target='_blank'>
-              Register
-            </MenuItem>
-            <MenuItem href='/forgot-password' target='_blank'>
-              Forgot Password
-            </MenuItem>
-          </SubMenu>
-          <SubMenu label='Miscellaneous' icon={<i className='ri-question-line' />}>
-            <MenuItem href='/error' target='_blank'>
-              Error
-            </MenuItem>
-            <MenuItem href='/under-maintenance' target='_blank'>
-              Under Maintenance
-            </MenuItem>
-          </SubMenu>
-          <MenuItem href='/admin/card-basic' icon={<i className='ri-bar-chart-box-line' />}>
-            Cards
-          </MenuItem>
-        </MenuSection>
+        {renderMenuItems(navigationList.menus)}
+
       </Menu>
     </ScrollWrapper>
   )
