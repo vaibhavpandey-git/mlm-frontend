@@ -11,6 +11,7 @@ import ProductCard from '@/views/product/ProductCard'
 import { Button } from '@headlessui/react'
 import CartModal from '../tailwind/CartModal'
 
+
 export type ProductType = {
   id: string | number
   name: string
@@ -51,7 +52,7 @@ export const products: ProductType[] = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
+    price: '₹4999.99',
     color: 'Black',
     quantity: 1,
     priceBreakUp: BreakUpList
@@ -62,7 +63,7 @@ export const products: ProductType[] = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
     imageAlt: "Front of men's Classic White Tee.",
-    price: '$30',
+    price: '₹4999.99',
     color: 'White',
     quantity: 1,
     priceBreakUp: BreakUpList
@@ -73,7 +74,7 @@ export const products: ProductType[] = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
     imageAlt: "Front of men's Graphic Tee.",
-    price: '$40',
+    price: '₹4999.99',
     color: 'Gray',
     quantity: 1,
     priceBreakUp: BreakUpList
@@ -84,7 +85,7 @@ export const products: ProductType[] = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg',
     imageAlt: "Front of men's Premium Hoodie.",
-    price: '$60',
+    price: '₹4999.99',
     color: 'Navy',
     quantity: 1,
     priceBreakUp: BreakUpList

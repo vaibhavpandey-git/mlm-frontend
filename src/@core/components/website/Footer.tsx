@@ -14,30 +14,31 @@ const Footer = () => {
             <li className='inline-block py-2 px-3 text-white uppercase font-medium tracking-wide'>Product</li>
             <li>
               <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
-                Features
+                Featured
               </a>
             </li>
             <li>
               <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
-                Integrations
+                New Arrivals
               </a>
             </li>
             <li>
               <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
-                Pricing
+                Special Offers
               </a>
             </li>
-            <li>
-              <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
-                FAQ
-              </a>
-            </li>
+
           </ul>
           <ul className='text-gray-700 list-none p-0 font-thin flex flex-col text-left w-full'>
             <li className='inline-block py-2 px-3 text-white uppercase font-medium tracking-wide'>Company</li>
             <li>
               <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
-                Privacy
+                Privacy policy
+              </a>
+            </li>
+            <li>
+              <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
+                About us
               </a>
             </li>
             <li>
@@ -45,22 +46,32 @@ const Footer = () => {
                 Terms of Service
               </a>
             </li>
+            <li>
+              <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
+                Contact us
+              </a>
+            </li>
           </ul>
           <ul className='text-gray-700 list-none p-0 font-thin flex flex-col text-left w-full'>
-            <li className='inline-block py-2 px-3 text-white uppercase font-medium tracking-wide'>Developers</li>
+            <li className='inline-block py-2 px-3 text-white uppercase font-medium tracking-wide'>Help</li>
             <li>
               <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
-                Developer API
+                Payments
               </a>
             </li>
             <li>
               <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
-                Documentation
+                Shipping
               </a>
             </li>
             <li>
               <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
-                Guides
+                Cancellation & Returns
+              </a>
+            </li>
+            <li>
+              <a href='#' className='inline-block py-2 px-3 text-gray-500 hover:text-white no-underline'>
+                FAQ
               </a>
             </li>
           </ul>

@@ -4,7 +4,7 @@
 import { forwardRef } from 'react'
 
 // Next Imports
-import Link from '@mui/material/Link'
+import Link from 'next/link'
 import type { LinkProps } from 'next/link'
 
 // Type Imports
