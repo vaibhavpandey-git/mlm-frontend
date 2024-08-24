@@ -31,16 +31,12 @@ export type BreakUpOption = {
 
 export const BreakUpList: BreakUpOption[] = [
   {
-    label: 'Price',
+    label: 'Price (inclusive of GST)',
     amount: '5000'
   },
   {
-    label: 'GST(18%)',
-    amount: '78'
-  },
-  {
     label: 'Total Pay',
-    amount: '5078'
+    amount: '5000'
   }
 ]
 

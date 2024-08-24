@@ -7,8 +7,9 @@ import { useRouter } from 'next/navigation'
 
 const navigation = [
   { name: 'Product', href: '/product' },
-  { name: 'Features', href: '/Features' },
-  { name: 'Company', href: '#' }
+  { name: 'Features', href: '/features' },
+  { name: 'Company', href: '/company' },
+  { name: 'About', href: '/about' }
 ]
 
 export default function Example() {

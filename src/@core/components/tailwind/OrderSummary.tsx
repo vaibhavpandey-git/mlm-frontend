@@ -25,7 +25,7 @@ const OrderSummary: React.FC<OrderSummaryProps> = ({ breakUps }) => {
             }
           >
             <span>{label}</span>
-            <span>${amount}</span>
+            <span>₹{amount}</span>
           </div>
         ))}
       </div>
