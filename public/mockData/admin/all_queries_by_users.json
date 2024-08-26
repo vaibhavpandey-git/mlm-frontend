@@ -1,0 +1,44 @@
+[
+    {
+        "userId": "user001",
+        "message": "Looking forward to the new update.",
+        "phone": "9876543210",
+        "name": "John Doe"
+    },
+    {
+        "userId": "user002",
+        "message": "I need help with my recent order.",
+        "phone": "9876543221",
+        "name": "Jane Smith"
+    },
+    {
+        "userId": "user003",
+        "message": "Can I change my shipping address?",
+        "phone": "9876543232",
+        "name": "Alice Johnson"
+    },
+    {
+        "userId": "user004",
+        "message": "Please update me on the product availability.",
+        "phone": "9876543243",
+        "name": "Bob Williams"
+    },
+    {
+        "userId": "user005",
+        "message": "The payment process seems to be delayed.",
+        "phone": "9876543254",
+        "name": "Charlie Brown"
+    },
+    {
+        "userId": "user006",
+        "message": "I haven't received my refund yet.",
+        "phone": "9876543265",
+        "name": "Emily Clark"
+    },
+    {
+        "userId": "user007",
+        "message": "Thank you for the quick response!",
+        "phone": "9876543276",
+        "name": "Michael Scott"
+    }
+]
