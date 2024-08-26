@@ -1,0 +1,104 @@
+[
+    {
+        "userId": "user-1",
+        "paymentStatus": "Success",
+        "requestedAmount": 1000,
+        "requestedOn": "2024-08-01T10:00:00Z",
+        "bankDetails": {
+            "bankName": "Bank A",
+            "accountNumber": 1234567890,
+            "accountHolder": "Vaibhav Pandey",
+            "bankIFSC": "BANKA0001",
+            "UPI": "vaibhav@banka"
+        },
+        "paymentDetails": {
+            "UTR": 9876543210,
+            "paidOn": "2024-08-02T10:00:00Z"
+        }
+    },
+    {
+        "userId": "user-2",
+        "paymentStatus": "Success",
+        "requestedAmount": 2000,
+        "requestedOn": "2024-08-03T11:00:00Z",
+        "bankDetails": {
+            "bankName": "Bank B",
+            "accountNumber": 2345678901,
+            "accountHolder": "John Doe",
+            "bankIFSC": "BANKB0002",
+            "UPI": "john.doe@bankb"
+        },
+        "paymentDetails": {
+            "UTR": 9876543211,
+            "paidOn": "2024-08-04T11:00:00Z"
+        }
+    },
+    {
+        "userId": "user-3",
+        "paymentStatus": "Success",
+        "requestedAmount": 3000,
+        "requestedOn": "2024-08-05T12:00:00Z",
+        "bankDetails": {
+            "bankName": "Bank C",
+            "accountNumber": 3456789012,
+            "accountHolder": "Alice Johnson",
+            "bankIFSC": "BANKC0003",
+            "UPI": "alice.johnson@bankc"
+        },
+        "paymentDetails": {
+            "UTR": 9876543212,
+            "paidOn": "2024-08-06T12:00:00Z"
+        }
+    },
+    {
+        "userId": "user-4",
+        "paymentStatus": "Success",
+        "requestedAmount": 4000,
+        "requestedOn": "2024-08-07T13:00:00Z",
+        "bankDetails": {
+            "bankName": "Bank D",
+            "accountNumber": 4567890123,
+            "accountHolder": "Charlie Brown",
+            "bankIFSC": "BANKD0004",
+            "UPI": "charlie.brown@bankd"
+        },
+        "paymentDetails": {
+            "UTR": 9876543213,
+            "paidOn": "2024-08-08T13:00:00Z"
+        }
+    },
+    {
+        "userId": "user-5",
+        "paymentStatus": "Success",
+        "requestedAmount": 5000,
+        "requestedOn": "2024-08-09T14:00:00Z",
+        "bankDetails": {
+            "bankName": "Bank E",
+            "accountNumber": 5678901234,
+            "accountHolder": "Jane Smith",
+            "bankIFSC": "BANKE0005",
+            "UPI": "jane.smith@banke"
+        },
+        "paymentDetails": {
+            "UTR": 9876543214,
+            "paidOn": "2024-08-10T14:00:00Z"
+        }
+    },
+    {
+        "userId": "user-6",
+        "paymentStatus": "Pending",
+        "requestedAmount": 6000,
+        "requestedOn": "2024-08-11T15:00:00Z",
+        "bankDetails": {
+            "bankName": "Bank F",
+            "accountNumber": 6789012345,
+            "accountHolder": "Emily Clark",
+            "bankIFSC": "BANKF0006",
+            "UPI": "emily.clark@bankf"
+        },
+        "paymentDetails": {
+            "UTR": null,
+            "paidOn": null
+        }
+    }
+]
