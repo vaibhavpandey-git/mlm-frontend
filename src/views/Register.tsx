@@ -52,7 +52,7 @@ const Register = ({ mode }: { mode: Mode }) => {
 
   const handleGetOtp = async () => {
     try {
-      const response = await axios.post('http://localhost:9000/v1/api/auth/generateotp', { phone })
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE}/auth/generateotp`, { phone })
 
       console.log('OTP requested successfully:', response.data)
 
@@ -74,7 +74,7 @@ const Register = ({ mode }: { mode: Mode }) => {
     }
 
     try {
-      const response = await axios.post('http://localhost:9000/v1/api/auth/register', { phone, otpCode, referralCode })
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE}/auth/register`, { phone, otpCode, referralCode })
 
       console.log('Registration successful:', response.data)
 
