@@ -33,11 +33,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, handleClick, handleC
   }
 
   return (
-    <div key={product.id} className='group relative'>
+    <div key={product._id} className='group relative'>
       <div className='aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80'>
         <img
-          alt={product.imageAlt}
-          src={product.imageSrc}
+          src={product.image}
           className='h-full w-full object-cover object-center lg:h-full lg:w-full'
         />
       </div>
@@ -46,10 +45,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, handleClick, handleC
           <h3 className='text-sm text-gray-700'>
             <a>
               <span aria-hidden='true' className='absolute inset-0' />
-              {product.name}
+              {product.title}
             </a>
           </h3>
-          <p className='mt-1 text-sm text-gray-500'>{product.color}</p>
+          {/* <p className='mt-1 text-sm text-gray-500'>{product.color}</p> */}
         </div>
         <p className='text-sm font-medium text-gray-900'>{product.price}</p>
       </div>
@@ -58,7 +57,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, handleClick, handleC
           Buy
         </Button>
         <IconButton
-          id={`share-button-${product.id}`}
+          id={`share-button-${product._id}`}
           aria-haspopup='true'
           aria-expanded={enableShare ? 'true' : 'false'}
           onClick={event => handlerShareClick(event)}
@@ -68,7 +67,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, handleClick, handleC
         <Menu
           anchorEl={anchorEl}
           open={Boolean(anchorEl && enableShare)}
-          MenuListProps={{ 'aria-labelledby': `share-button-${product.id}` }}
+          MenuListProps={{ 'aria-labelledby': `share-button-${product._id}` }}
           onClose={onShare}
         >
           <MenuItem onClick={() => onShare(1)}>

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog, DialogBackdrop, DialogPanel, DialogTitle } from '@headlessui/react'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import OrderSummary from './OrderSummary'
@@ -17,10 +17,14 @@ type CardModalProps = {
 
 export default function Example({ isOpen, onClose, cartItems }: CardModalProps) {
   const router = useRouter()
-  
-  function handleContinue(){
+
+  function handleContinue() {
     router.push('/buy/checkout')
   }
+
+  // useEffect(() => {
+  //   console.log("cart items order summay ", cartItems)
+  // }, [cartItems])
   return (
     <Dialog open={Boolean(isOpen && cartItems.length)} onClose={onClose} className='relative z-10'>
       <DialogBackdrop
@@ -54,12 +58,13 @@ export default function Example({ isOpen, onClose, cartItems }: CardModalProps) 
 
                   {/* CartItem */}
 
-                  <CartItems cartItems={cartItems}/>
+                  <CartItems cartItems={cartItems} />
                 </div>
                 {cartItems && <OrderSummary breakUps={cartItems?.[0]?.priceBreakUp} />}
+
                 <div className='border-t border-gray-200 px-4 py-6 sm:px-6'>
                   <div className='mt-6'>
-                    <a onClick={()=>handleContinue()} className='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 cursor-pointer'>
+                    <a onClick={() => handleContinue()} className='flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 cursor-pointer'>
                       Continue to Payment
                     </a>
                     {/* <ButtonPro label={'Checkout'} /> */}

@@ -3,23 +3,20 @@
 'use client'
 
 // React Imports
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { MouseEvent } from 'react'
 
 // MUI Imports
 import ProductCard from '@/views/product/ProductCard'
 import { Button } from '@headlessui/react'
 import CartModal from '../tailwind/CartModal'
+import axios from 'axios'
 
 export type ProductType = {
-  id: string | number
-  name: string
-  href: string
-  imageSrc: string
-  imageAlt: string
+  _id: string
+  title: string
+  image: string
   price: string
-  color: string
-  quantity: number
   priceBreakUp: BreakUpOption[]
 }
 
@@ -28,71 +25,95 @@ export type BreakUpOption = {
   amount: string | number
 }
 
-export const BreakUpList: BreakUpOption[] = [
-  {
-    label: 'Price',
-    amount: '5000'
-  },
-  {
-    label: 'GST(18%)',
-    amount: '78'
-  },
-  {
-    label: 'Total Pay',
-    amount: '5078'
-  }
-]
+// export const BreakUpList: BreakUpOption[] = [
+//   {
+//     label: 'Price',
+//     amount: '5000'
+//   },
+//   {
+//     label: 'GST(18%)',
+//     amount: '78'
+//   },
+//   {
+//     label: 'Total Pay',
+//     amount: '5078'
+//   }
+// ]
 
 // Define products data
-export const products: ProductType[] = [
-  {
-    id: 1,
-    name: 'Basic Tee',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
-    quantity: 1,
-    priceBreakUp: BreakUpList
-  },
-  {
-    id: 2,
-    name: 'Classic White Tee',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
-    imageAlt: "Front of men's Classic White Tee.",
-    price: '$30',
-    color: 'White',
-    quantity: 1,
-    priceBreakUp: BreakUpList
-  },
-  {
-    id: 3,
-    name: 'Graphic Tee',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
-    imageAlt: "Front of men's Graphic Tee.",
-    price: '$40',
-    color: 'Gray',
-    quantity: 1,
-    priceBreakUp: BreakUpList
-  },
-  {
-    id: 4,
-    name: 'Premium Hoodie',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg',
-    imageAlt: "Front of men's Premium Hoodie.",
-    price: '$60',
-    color: 'Navy',
-    quantity: 1,
-    priceBreakUp: BreakUpList
-  }
-  // Add more products as needed
-]
+// export const products: ProductType[] = [
+//   {
+//     id: 1,
+//     name: 'Basic Tee',
+//     href: '#',
+//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+//     imageAlt: "Front of men's Basic Tee in black.",
+//     price: '$35',
+//     color: 'Black',
+//     quantity: 1,
+//     priceBreakUp: BreakUpList
+//   },
+//   {
+//     id: 2,
+//     name: 'Classic White Tee',
+//     href: '#',
+//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-02.jpg',
+//     imageAlt: "Front of men's Classic White Tee.",
+//     price: '$30',
+//     color: 'White',
+//     quantity: 1,
+//     priceBreakUp: BreakUpList
+//   },
+//   {
+//     id: 3,
+//     name: 'Graphic Tee',
+//     href: '#',
+//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-03.jpg',
+//     imageAlt: "Front of men's Graphic Tee.",
+//     price: '$40',
+//     color: 'Gray',
+//     quantity: 1,
+//     priceBreakUp: BreakUpList
+//   },
+//   {
+//     id: 4,
+//     name: 'Premium Hoodie',
+//     href: '#',
+//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-04.jpg',
+//     imageAlt: "Front of men's Premium Hoodie.",
+//     price: '$60',
+//     color: 'Navy',
+//     quantity: 1,
+//     priceBreakUp: BreakUpList
+//   }
+//   // Add more products as needed
+// ]
 
 export default function Example() {
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE;
+
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    try {
+      const response = await axios.get(`${baseUrl}/public/products`);
+      // console.log(response);
+      setProducts(response.data.data);
+      console.log(products)
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, [])
+
+  useEffect(() => {
+    console.log("2nd", products)
+  }, [products])
+
+
   // States for managing share menu
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
   const [currentProduct, setCurrentProduct] = useState<any>(null)
@@ -147,7 +168,7 @@ export default function Example() {
 
         <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
           {products.map(product => (
-            <ProductCard key={product.id} product={product} handleClick={handleClick} handleClose={handleClose} />
+            <ProductCard key={product._id} product={product} handleClick={handleClick} handleClose={handleClose} />
           ))}
         </div>
 
