@@ -1,0 +1,258 @@
+[
+    {
+        "role": "admin",
+        "phone": "9876543210",
+        "personalDetails": {
+            "name": "Vaibhav Pandey",
+            "email": "vaibhav.pandey@example.com",
+            "dateOfBirth": "1990-01-15",
+            "gender": "Male",
+            "profileImage": "https://example.com/images/vaibhav.png",
+            "address": {
+                "firstLine": "123, Park Avenue",
+                "city": "Mumbai",
+                "pinCode": 400001,
+                "country": "India",
+                "state": "Maharashtra"
+            }
+        },
+        "bankDetails": {
+            "bankName": "State Bank of India",
+            "accountNumber": 9876543255,
+            "accountHolder": "Vaibhav Pandey",
+            "bankIFSC": "SBIN00045",
+            "UPI": "7827295033@paytm"
+        },
+        "kycDetails": {
+            "kycStatus": "Verified",
+            "aadharNumber": 123412341234,
+            "panNumber": "ABCDE1234F",
+            "aadharProof": "https://example.com/aadhar/vaibhav.png",
+            "panProof": "https://example.com/pan/vaibhav.png"
+        },
+        "products": [
+            {
+                "allRefs": [
+                    "ref1",
+                    "ref2"
+                ],
+                "parentId": "parent123",
+                "orderId": "order123",
+                "productId": "prod123",
+                "isActive": true,
+                "referrals": [
+                    {
+                        "userId": "user123",
+                        "orderId": "order567"
+                    },
+                    {
+                        "userId": "user456",
+                        "orderId": "order890"
+                    }
+                ]
+            }
+        ],
+        "refCode": "gsuTiqoT",
+        "investment": 10000,
+        "balance": 5000
+    },
+    {
+        "role": "user",
+        "phone": "9876543222",
+        "personalDetails": {
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "dateOfBirth": "1985-05-20",
+            "gender": "Male",
+            "profileImage": "https://example.com/images/johndoe.png",
+            "address": {
+                "firstLine": "456, Maple Street",
+                "city": "Delhi",
+                "pinCode": 110001,
+                "country": "India",
+                "state": "Delhi"
+            }
+        },
+        "bankDetails": {
+            "bankName": "HDFC Bank",
+            "accountNumber": 1234567890,
+            "accountHolder": "John Doe",
+            "bankIFSC": "HDFC00045",
+            "UPI": "9876543210@paytm"
+        },
+        "kycDetails": {
+            "kycStatus": "Pending",
+            "aadharNumber": 432143214321,
+            "panNumber": "ABCDE9876Z",
+            "aadharProof": "https://example.com/aadhar/johndoe.png",
+            "panProof": "https://example.com/pan/johndoe.png"
+        },
+        "products": [
+            {
+                "allRefs": [
+                    "ref3"
+                ],
+                "parentId": "parent456",
+                "orderId": "order678",
+                "productId": "prod456",
+                "isActive": false,
+                "referrals": []
+            }
+        ],
+        "refCode": "REFJOHN123",
+        "investment": 5000,
+        "balance": 3000
+    },
+    {
+        "role": "admin",
+        "phone": "9988776655",
+        "personalDetails": {
+            "name": "Alice Williams",
+            "email": "alice.williams@example.com",
+            "dateOfBirth": "1992-10-05",
+            "gender": "Female",
+            "profileImage": "https://example.com/images/alice.png",
+            "address": {
+                "firstLine": "789, Oak Avenue",
+                "city": "Bangalore",
+                "pinCode": 560001,
+                "country": "India",
+                "state": "Karnataka"
+            }
+        },
+        "bankDetails": {
+            "bankName": "ICICI Bank",
+            "accountNumber": 9988776655,
+            "accountHolder": "Alice Williams",
+            "bankIFSC": "ICIC000045",
+            "UPI": "9988776655@paytm"
+        },
+        "kycDetails": {
+            "kycStatus": "Verified",
+            "aadharNumber": 987654321098,
+            "panNumber": "ABCDE5678G",
+            "aadharProof": "https://example.com/aadhar/alice.png",
+            "panProof": "https://example.com/pan/alice.png"
+        },
+        "products": [
+            {
+                "allRefs": [
+                    "ref4",
+                    "ref5"
+                ],
+                "parentId": "parent789",
+                "orderId": "order789",
+                "productId": "prod789",
+                "isActive": true,
+                "referrals": [
+                    {
+                        "userId": "user789",
+                        "orderId": "order901"
+                    }
+                ]
+            }
+        ],
+        "refCode": "REFALICE123",
+        "investment": 20000,
+        "balance": 12000
+    },
+    {
+        "role": "user",
+        "phone": "9988223344",
+        "personalDetails": {
+            "name": "Bob Smith",
+            "email": "bob.smith@example.com",
+            "dateOfBirth": "1988-07-17",
+            "gender": "Male",
+            "profileImage": "https://example.com/images/bob.png",
+            "address": {
+                "firstLine": "101, Palm Street",
+                "city": "Chennai",
+                "pinCode": 600001,
+                "country": "India",
+                "state": "Tamil Nadu"
+            }
+        },
+        "bankDetails": {
+            "bankName": "Axis Bank",
+            "accountNumber": 4455667788,
+            "accountHolder": "Bob Smith",
+            "bankIFSC": "AXIS000045",
+            "UPI": "9988223344@paytm"
+        },
+        "kycDetails": {
+            "kycStatus": "Rejected",
+            "aadharNumber": 876543210987,
+            "panNumber": "ABCDE4321D",
+            "aadharProof": "https://example.com/aadhar/bob.png",
+            "panProof": "https://example.com/pan/bob.png"
+        },
+        "products": [
+            {
+                "allRefs": [
+                    "ref6"
+                ],
+                "parentId": "parent321",
+                "orderId": "order321",
+                "productId": "prod321",
+                "isActive": false,
+                "referrals": []
+            }
+        ],
+        "refCode": "REFBOB123",
+        "investment": 7000,
+        "balance": 4000
+    },
+    {
+        "role": "admin",
+        "phone": "8899776655",
+        "personalDetails": {
+            "name": "Charlie Brown",
+            "email": "charlie.brown@example.com",
+            "dateOfBirth": "1995-04-12",
+            "gender": "Male",
+            "profileImage": "https://example.com/images/charlie.png",
+            "address": {
+                "firstLine": "102, Coconut Grove",
+                "city": "Hyderabad",
+                "pinCode": 500001,
+                "country": "India",
+                "state": "Telangana"
+            }
+        },
+        "bankDetails": {
+            "bankName": "Kotak Bank",
+            "accountNumber": 5544332211,
+            "accountHolder": "Charlie Brown",
+            "bankIFSC": "KKBK000045",
+            "UPI": "8899776655@paytm"
+        },
+        "kycDetails": {
+            "kycStatus": "Verified",
+            "aadharNumber": 765432109876,
+            "panNumber": "ABCDE9876X",
+            "aadharProof": "https://example.com/aadhar/charlie.png",
+            "panProof": "https://example.com/pan/charlie.png"
+        },
+        "products": [
+            {
+                "allRefs": [
+                    "ref7"
+                ],
+                "parentId": "parent654",
+                "orderId": "order654",
+                "productId": "prod654",
+                "isActive": true,
+                "referrals": [
+                    {
+                        "userId": "user654",
+                        "orderId": "order987"
+                    }
+                ]
+            }
+        ],
+        "refCode": "REFCHARLIE123",
+        "investment": 15000,
+        "balance": 8000
+    }
+]

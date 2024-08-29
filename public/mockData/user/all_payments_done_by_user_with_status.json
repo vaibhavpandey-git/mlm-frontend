@@ -1,0 +1,87 @@
+[
+    {
+        "userId": "user-1",
+        "paymentStatus": "Success",
+        "requestedAmount": 1500,
+        "requestedOn": "2024-08-01T09:30:00Z",
+        "bankDetails": {
+            "bankName": "Bank X",
+            "accountNumber": 1122334455,
+            "accountHolder": "Alice Adams",
+            "bankIFSC": "BANKX0001",
+            "UPI": "alice.adams@bankx"
+        },
+        "paymentDetails": {
+            "UTR": 1234567890,
+            "paidOn": "2024-08-02T09:30:00Z"
+        }
+    },
+    {
+        "userId": "user-2",
+        "paymentStatus": "Success",
+        "requestedAmount": 2500,
+        "requestedOn": "2024-08-03T10:00:00Z",
+        "bankDetails": {
+            "bankName": "Bank Y",
+            "accountNumber": 2233445566,
+            "accountHolder": "Bob Brown",
+            "bankIFSC": "BANKY0002",
+            "UPI": "bob.brown@banky"
+        },
+        "paymentDetails": {
+            "UTR": 2345678901,
+            "paidOn": "2024-08-04T10:00:00Z"
+        }
+    },
+    {
+        "userId": "user-3",
+        "paymentStatus": "Rejected",
+        "requestedAmount": 3000,
+        "requestedOn": "2024-08-05T10:30:00Z",
+        "bankDetails": {
+            "bankName": "Bank Z",
+            "accountNumber": 3344556677,
+            "accountHolder": "Carol Clark",
+            "bankIFSC": "BANKZ0003",
+            "UPI": "carol.clark@bankz"
+        },
+        "paymentDetails": {
+            "UTR": 3456789012,
+            "paidOn": "2024-08-06T10:30:00Z"
+        }
+    },
+    {
+        "userId": "user-4",
+        "paymentStatus": "Pending",
+        "requestedAmount": 4000,
+        "requestedOn": "2024-08-07T11:00:00Z",
+        "bankDetails": {
+            "bankName": "Bank A",
+            "accountNumber": 4455667788,
+            "accountHolder": "David Davis",
+            "bankIFSC": "BANKA0004",
+            "UPI": "david.davis@banka"
+        },
+        "paymentDetails": {
+            "UTR": null,
+            "paidOn": null
+        }
+    },
+    {
+        "userId": "user-5",
+        "paymentStatus": "Success",
+        "requestedAmount": 5000,
+        "requestedOn": "2024-08-08T11:30:00Z",
+        "bankDetails": {
+            "bankName": "Bank B",
+            "accountNumber": 5566778899,
+            "accountHolder": "Eve Evans",
+            "bankIFSC": "BANKB0005",
+            "UPI": "eve.evans@bankb"
+        },
+        "paymentDetails": {
+            "UTR": 4567890123,
+            "paidOn": "2024-08-09T11:30:00Z"
+        }
+    }
+]

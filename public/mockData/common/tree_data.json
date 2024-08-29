@@ -1,0 +1,52 @@
+{
+    "name": "Vaibhav Pandey",
+    "phone": "9876543210",
+    "max": 12,
+    "userId": "user-1",
+    "children": [
+        {
+            "name": "John Doe",
+            "phone": "9876543211",
+            "max": 3,
+            "userId": "user-2",
+            "children": [
+                {
+                    "name": "Alice Johnson",
+                    "phone": "987654323",
+                    "max": 3,
+                    "userId": "user-3",
+                    "children": []
+                },
+                {
+                    "name": "Charlie Brown",
+                    "phone": "9876543213",
+                    "max": 3,
+                    "userId": "user-4",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Jane Smith",
+            "phone": "9876543214",
+            "max": 3,
+            "userId": "user-5",
+            "children": [
+                {
+                    "name": "Emily Clark",
+                    "phone": "9876543215",
+                    "max": 3,
+                    "userId": "user-6",
+                    "children": []
+                },
+                {
+                    "name": "Michael Scott",
+                    "phone": "9876543216",
+                    "max": 3,
+                    "userId": "user-7",
+                    "children": []
+                }
+            ]
+        }
+    ]
+}

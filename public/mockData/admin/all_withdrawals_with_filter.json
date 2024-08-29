@@ -1,0 +1,87 @@
+[
+    {
+        "userId": "user001",
+        "paymentStatus": "Pending",
+        "requestedAmount": 5000,
+        "requestedOn": "2024-08-25T10:00:00Z",
+        "bankDetails": {
+            "bankName": "State Bank of India",
+            "accountNumber": 9876543210,
+            "accountHolder": "John Doe",
+            "bankIFSC": "SBIN0000123",
+            "UPI": "9876543210@upi"
+        },
+        "paymentDetails": {
+            "UTR": null,
+            "paidOn": null
+        }
+    },
+    {
+        "userId": "user002",
+        "paymentStatus": "Pending",
+        "requestedAmount": 8000,
+        "requestedOn": "2024-08-24T12:30:00Z",
+        "bankDetails": {
+            "bankName": "HDFC Bank",
+            "accountNumber": 1234567890,
+            "accountHolder": "Jane Smith",
+            "bankIFSC": "HDFC0000456",
+            "UPI": "1234567890@upi"
+        },
+        "paymentDetails": {
+            "UTR": null,
+            "paidOn": null
+        }
+    },
+    {
+        "userId": "user003",
+        "paymentStatus": "Pending",
+        "requestedAmount": 3000,
+        "requestedOn": "2024-08-23T09:15:00Z",
+        "bankDetails": {
+            "bankName": "ICICI Bank",
+            "accountNumber": 9876543211,
+            "accountHolder": "Alice Johnson",
+            "bankIFSC": "ICIC0000678",
+            "UPI": "alicejohnson@upi"
+        },
+        "paymentDetails": {
+            "UTR": null,
+            "paidOn": null
+        }
+    },
+    {
+        "userId": "user004",
+        "paymentStatus": "Pending",
+        "requestedAmount": 10000,
+        "requestedOn": "2024-08-22T15:45:00Z",
+        "bankDetails": {
+            "bankName": "Axis Bank",
+            "accountNumber": 6543210987,
+            "accountHolder": "Bob Williams",
+            "bankIFSC": "UTIB0000567",
+            "UPI": "bobwilliams@upi"
+        },
+        "paymentDetails": {
+            "UTR": null,
+            "paidOn": null
+        }
+    },
+    {
+        "userId": "user005",
+        "paymentStatus": "Pending",
+        "requestedAmount": 4500,
+        "requestedOn": "2024-08-21T11:00:00Z",
+        "bankDetails": {
+            "bankName": "Punjab National Bank",
+            "accountNumber": 1234987654,
+            "accountHolder": "Charlie Brown",
+            "bankIFSC": "PUNB0001234",
+            "UPI": "charliebrown@upi"
+        },
+        "paymentDetails": {
+            "UTR": null,
+            "paidOn": null
+        }
+    }
+]

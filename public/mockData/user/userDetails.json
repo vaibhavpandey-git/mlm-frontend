@@ -1,0 +1,58 @@
+{
+    "role": "admin",
+    "phone": "9876543210",
+    "personalDetails": {
+        "name": "Vaibhav Pandey",
+        "email": "vaibhav.pandey@example.com",
+        "dateOfBirth": "1990-01-15",
+        "gender": "Male",
+        "profileImage": "https://example.com/images/vaibhav.png",
+        "address": {
+            "firstLine": "123, Park Avenue",
+            "city": "Mumbai",
+            "pinCode": 400001,
+            "country": "India",
+            "state": "Maharashtra"
+        }
+    },
+    "bankDetails": {
+        "bankName": "State Bank of India",
+        "accountNumber": 9876543255,
+        "accountHolder": "Vaibhav Pandey",
+        "bankIFSC": "SBIN00045",
+        "UPI": "7827295033@paytm"
+    },
+    "kycDetails": {
+        "kycStatus": "Verified",
+        "aadharNumber": 123412341234,
+        "panNumber": "ABCDE1234F",
+        "aadharProof": "https://example.com/aadhar/vaibhav.png",
+        "panProof": "https://example.com/pan/vaibhav.png"
+    },
+    "products": [
+        {
+            "allRefs": [
+                "ref1",
+                "ref2"
+            ],
+            "parentId": "parent123",
+            "orderId": "order123",
+            "productId": "prod123",
+            "isActive": true,
+            "referrals": [
+                {
+                    "userId": "user123",
+                    "orderId": "order567"
+                },
+                {
+                    "userId": "user456",
+                    "orderId": "order890"
+                }
+            ]
+        }
+    ],
+    "canBuy": true,
+    "refCode": "gsuTiqoT",
+    "investment": 10000,
+    "balance": 5000
+}
