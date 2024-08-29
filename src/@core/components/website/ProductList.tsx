@@ -92,7 +92,7 @@ export type BreakUpOption = {
 export default function Example() {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE;
 
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState<ProductType[]>([]);
 
   const getProducts = async () => {
     try {
@@ -101,7 +101,7 @@ export default function Example() {
       setProducts(response.data.data);
       console.log(products)
     } catch (error) {
-      console.error(error.message);
+      // console.error(error.message);
     }
   }
 
@@ -167,7 +167,7 @@ export default function Example() {
         <h2 className='text-2xl font-bold tracking-tight text-gray-900'>Products</h2>
 
         <div className='mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8'>
-          {products.map(product => (
+          {products && products.length && products.map(product => (
             <ProductCard key={product._id} product={product} handleClick={handleClick} handleClose={handleClose} />
           ))}
         </div>
