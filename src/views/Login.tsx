@@ -5,8 +5,9 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 
 // Next Imports
-import Link from '@mui/material/Link'
 import { useRouter } from 'next/navigation'
+
+import Link from '@mui/material/Link'
 
 // MUI Imports
 import Card from '@mui/material/Card'
@@ -19,8 +20,12 @@ import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Divider from '@mui/material/Divider'
+import Snackbar from '@mui/material/Snackbar'
+import Alert from '@mui/material/Alert'
 
 // Type Imports
+import axios from 'axios'
+
 import type { Mode } from '@core/types'
 
 // Component Imports
@@ -33,9 +38,15 @@ import themeConfig from '@configs/themeConfig'
 // Hook Imports
 import { useImageVariant } from '@core/hooks/useImageVariant'
 
+
 const Login = ({ mode }: { mode: Mode }) => {
   // States
   const [isPasswordShown, setIsPasswordShown] = useState(false)
+  const [phone, setPhone] = useState('')
+  const [password, setPassword] = useState('')
+  const [snackbarOpen, setSnackbarOpen] = useState(false)
+  const [snackbarMessage, setSnackbarMessage] = useState('')
+  const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error'>('success')
 
   // Vars
   const darkImg = '/images/pages/auth-v1-mask-dark.png'
@@ -47,9 +58,35 @@ const Login = ({ mode }: { mode: Mode }) => {
 
   const handleClickShowPassword = () => setIsPasswordShown(show => !show)
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    router.push('/')
+
+    try {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_BASE}/auth/login`, {
+        phone,
+        password
+      })
+
+      if (response.status === 200) {
+        setSnackbarMessage('Login successful!')
+        setSnackbarSeverity('success')
+        setSnackbarOpen(true)
+        router.push('/')
+      } else {
+        setSnackbarMessage(response.data.message || 'Login failed')
+        setSnackbarSeverity('error')
+        setSnackbarOpen(true)
+      }
+    } catch (error) {
+      console.error('Error during login:', error)
+      setSnackbarMessage('An error occurred. Please try again.')
+      setSnackbarSeverity('error')
+      setSnackbarOpen(true)
+    }
+  }
+
+  const handleCloseSnackbar = () => {
+    setSnackbarOpen(false)
   }
 
   return (
@@ -65,12 +102,20 @@ const Login = ({ mode }: { mode: Mode }) => {
               <Typography className='mbs-1'>Please sign-in to your account and start the adventure</Typography>
             </div>
             <form noValidate autoComplete='off' onSubmit={handleSubmit} className='flex flex-col gap-5'>
-              <TextField autoFocus fullWidth label='Email' />
+              <TextField
+                autoFocus
+                fullWidth
+                label='Phone Number'
+                value={phone}
+                onChange={e => setPhone(e.target.value)}
+              />
               <TextField
                 fullWidth
                 label='Password'
                 id='outlined-adornment-password'
                 type={isPasswordShown ? 'text' : 'password'}
+                value={password}
+                onChange={e => setPassword(e.target.value)}
                 InputProps={{
                   endAdornment: (
                     <InputAdornment position='end'>
@@ -121,6 +166,17 @@ const Login = ({ mode }: { mode: Mode }) => {
         </CardContent>
       </Card>
       <Illustrations maskImg={{ src: authBackground }} />
+
+      {/* Snackbar Component */}
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert onClose={handleCloseSnackbar} severity={snackbarSeverity}>
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   )
 }
