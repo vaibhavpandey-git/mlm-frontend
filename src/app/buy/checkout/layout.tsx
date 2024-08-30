@@ -15,12 +15,12 @@ const Layout = ({ children }: ChildrenType) => {
 
   return (
     <Providers direction={direction}>
-      <CheckoutHeader/>
+      <CheckoutHeader />
       <BlankLayout>
-      <WebsiteWrapper texture={false}>
-        {children}
-      </WebsiteWrapper>
-        </BlankLayout>
+        <WebsiteWrapper texture={false}>
+          {children}
+        </WebsiteWrapper>
+      </BlankLayout>
       <Footer />
     </Providers>
   )
