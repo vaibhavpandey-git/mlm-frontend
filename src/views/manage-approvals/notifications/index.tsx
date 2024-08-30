@@ -27,7 +27,7 @@ const PaymentApprovals = () => {
       <Grid item xs={12}>
         <UserPaymentTable actionHandler={actionHandler} />
       </Grid>
-      <ModalWrapper isOpen={open} onClose={onClose} children={<AccountDetails data={selectedUser} />} />
+      <ModalWrapper isOpen={open} onClose={onClose} children={<AccountDetails />} />
 
     </Grid>
   )

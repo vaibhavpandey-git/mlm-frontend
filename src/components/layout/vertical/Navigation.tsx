@@ -36,7 +36,7 @@ const StyledBoxForShadow = styled('div')(({ theme }) => ({
   }
 }))
 
-const Navigation = () => {
+const Navigation = ({ navigationList }: { navigationList: any }) => {
   // Hooks
   const theme = useTheme()
   const { isBreakpointReached, toggleVerticalNav } = useVerticalNav()
@@ -71,7 +71,7 @@ const Navigation = () => {
         {isBreakpointReached && <i className='ri-close-line text-xl' onClick={() => toggleVerticalNav(false)} />}
       </NavHeader>
       <StyledBoxForShadow ref={shadowRef} />
-      <VerticalMenu scrollMenu={scrollMenu} />
+      <VerticalMenu scrollMenu={scrollMenu} navigationList={navigationList} />
     </VerticalNav>
   )
 }

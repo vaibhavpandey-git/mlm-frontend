@@ -87,7 +87,7 @@ const Register = ({ mode }: { mode: Mode }) => {
       // Show success popup
       setSuccess(true)
       setError('') // Clear any previous error
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error during registration:', error)
 
       // Show error popup for incorrect OTP
